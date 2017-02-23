@@ -1,0 +1,23 @@
+{
+    "name": "macopedia/magento2-categoryimporter",
+    "description": "Category Importer for Magento 2",
+    "require": {
+        "php": "~5.5.0|~5.6.0|~7.0.0",
+        "magento/module-store": "100.0.*|100.1.*|100.2.*",
+        "magento/framework": "100.1.*"
+    },
+    "type": "magento2-module",
+    "version": "1.0.0",
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "Macopedia\\CategoryImporter\\": ""
+        }
+    },
+    "license": [
+        "OSL-3.0",
+        "AFL-3.0"
+    ]
+}

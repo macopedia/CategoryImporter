@@ -1,0 +1,5 @@
+id;name;parent_id;is_active;is_anchor;include_in_menu;custom_use_parent_settings;description;meta_title;meta_keywords;meta_description
+10;Test 1;;1;0;1;0;Test 1 description;Test 1 meta title;test1,test;Test 1 meta description
+11;Test 11;10;1;1;1;0;Test 11 description;Test 11 meta title;test11,test;Test 11 meta description
+13;Test 12;10;0;0;1;0;Test 12 description;Test 12 meta title;test12,test;Test 12 meta description
+17;Test 111;11;1;1;0;1;Test 111 description;Test 111 meta title;test111,test;Test 111 meta description

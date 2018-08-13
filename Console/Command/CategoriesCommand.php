@@ -85,20 +85,29 @@ class CategoriesCommand extends Command
     private $errors;
 
     /**
+     * @var \Magento\Framework\App\State
+     */
+    private $state;
+
+    /**
      * @param ObjectManagerInterface $objectManager
      * @param \Magento\Framework\File\Csv $fileCsv
      * @param \Magento\Framework\App\Filesystem\DirectoryList $directoryList
+     * @param \Magento\Store\Model\StoreManagerInterface $storeManager
+     * @param \Magento\Framework\App\State $state
      */
     public function __construct(
         ObjectManagerInterface $objectManager,
         \Magento\Framework\File\Csv $fileCsv,
         \Magento\Framework\App\Filesystem\DirectoryList $directoryList,
-        \Magento\Store\Model\StoreManagerInterface $storeManager
+        \Magento\Store\Model\StoreManagerInterface $storeManager,
+        \Magento\Framework\App\State $state
     ) {
         $this->objectManager = $objectManager;
         $this->fileCsv = $fileCsv;
         $this->directoryList = $directoryList;
         $this->storeManager = $storeManager;
+        $this->state = $state;
         $this->storeManager->setCurrentStore('admin');
         parent::__construct();
     }
@@ -137,6 +146,7 @@ class CategoriesCommand extends Command
     protected function execute(InputInterface $input, OutputInterface $output)
     {
         try {
+            $this->state->setAreaCode(\Magento\Framework\App\Area::AREA_ADMINHTML);
             $path = $input->getOption('path');
             if (!$path) {
                 throw new LocalizedException(__('Please specify path to file! (eg. "var/import/categories.csv")'));

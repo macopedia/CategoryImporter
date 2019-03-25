@@ -164,6 +164,11 @@ class CategoriesCommand extends Command
                     $i++;
                     continue;
                 }
+                if (empty($row[$this->headersMap['id']])
+                    || empty($row[$this->headersMap['name']])
+                    || !isset($row[$this->headersMap['parent_id']])) {
+                    continue;
+                }
                 if ($row[$this->headersMap['parent_id']] == 'NULL'
                     || $row[$this->headersMap['parent_id']] == 'null'
                     || $row[$this->headersMap['parent_id']] == ''

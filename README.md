@@ -1,4 +1,4 @@
-# CategoryImporter module for Magento 2 (2.1.x)
+# CategoryImporter module for Magento 2 >= 2.1.x
 
 Simple category importer from CSV file. Allows to import / update 
 categories not only from Magento shops (use old shop category ID)

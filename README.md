@@ -40,11 +40,11 @@ categories not only from Magento shops (use old shop category ID)
 	
 **Base usage examples**
 
-        bin/magento import:categories [--path|-p <path to file in Magento dir>] [--additional|-a <additional attributes separated by comma>]
+    bin/magento import:categories [--path|-p <path to file in Magento dir>] [--additional|-a <additional attributes separated by comma>]
 
-		bin/magento import:categories -p var/import/categories-example.csv 
+	bin/magento import:categories -p var/import/categories-example.csv 
 		
-        bin/magento import:categories -p var/import/categories-example.csv -a my_custom_attribute1,my_custom_attribute2,my_custom_attribute3
+    bin/magento import:categories -p var/import/categories-example.csv -a my_custom_attribute1,my_custom_attribute2,my_custom_attribute3
 
 **Simple CSV file to import categories**
 

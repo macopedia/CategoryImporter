@@ -10,6 +10,11 @@ categories not only from Magento shops (use old shop category ID)
 - adds links between parent and child categories (by 'Old category ID')
 - work only for admin store (multi stores are not implemented yet)
 
+# Install module
+
+- add module via composer or download and copy files to app/code/Macopedia/CategoryImporter
+- run bin/magento module:enable Macopedia_CategoryImporter in command line
+
 # Usage
 
 **NOTICES:** 

@@ -45,3 +45,12 @@ categories not only from Magento shops (use old shop category ID)
 		bin/magento import:categories -p var/import/categories-example.csv 
 		
         bin/magento import:categories -p var/import/categories-example.csv -a my_custom_attribute1,my_custom_attribute2,my_custom_attribute3
+
+**Simple CSV file to import categories**
+
+    id;name;parent_id
+    10;Category name 1;null
+    11;Category name 2;null
+    20;First child of cat 1;10
+    21;First child of cat 2;11
+    22;Second child of cat 2;11

@@ -179,15 +179,15 @@ class CategoriesCommand extends Command
                 }
             }
 
-            foreach ($this->baseParentCategories as $category) {
+            foreach (!empty($this->baseParentCategories) ? $this->baseParentCategories : [] as $category) {
                 $this->addOrUpdateCategory($category, true);
             }
 
-            foreach ($this->childCategories as $category) {
+            foreach (!empty($this->childCategories) ? $this->childCategories : [] as $category) {
                 $this->addOrUpdateCategory($category);
             }
 
-            if (count($this->errors) > 0) {
+            if (!empty($this->errors)) {
                 $output->writeln('There was ' . count($this->errors) . ' errors:');
                 foreach ($this->errors as $error) {
                     $output->writeln($error);

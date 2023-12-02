@@ -141,7 +141,7 @@ class CategoriesCommand extends Command
             if (!$path) {
                 throw new LocalizedException(__('Please specify path to file! (eg. "var/import/categories.csv")'));
             }
-            $additionalHeadersDefinedByUser = explode(',', $input->getOption('additional'));
+            $additionalHeadersDefinedByUser = $input->getOption('additional') ? explode(',', $input->getOption('additional')) : [];
             $this->additionalHeaders = array_merge($this->additionalHeaders, $additionalHeadersDefinedByUser);
 
             $file = $this->directoryList->getRoot() . '/' . $path;
@@ -306,11 +306,12 @@ class CategoriesCommand extends Command
     protected function mapHeaders($row)
     {
         $headers = array_merge($this->requiredHeaders, $this->optionalHeaders, $this->additionalHeaders);
+    
+        $this->headersMap = []; // Initialize headersMap as an empty array
+    
         foreach ($row as $key => $item) {
-            foreach ($headers as $header) {
-                if($item == $header) {
-                    $this->headersMap[$header] = $key;
-                }
+            if (in_array($item, $headers)) {
+                $this->headersMap[$item] = $key;
             }
         }
     }

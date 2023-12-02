@@ -6,7 +6,6 @@ use Magento\Framework\Setup\InstallDataInterface;
 use Magento\Framework\Setup\ModuleContextInterface;
 use Magento\Framework\Setup\ModuleDataSetupInterface;
 
-
 class InstallData implements InstallDataInterface
 {
     /**
@@ -15,9 +14,14 @@ class InstallData implements InstallDataInterface
     private $eavSetupFactory;
 
     /**
-     * @var \Magento\Eav\Setup\EavSetup $eavSetup
+     * @var \Magento\Eav\Setup\EavSetup
      */
     private $eavSetup;
+
+    /**
+     * @var string
+     */
+    private $entityType;
 
     /**
      * @param \Magento\Eav\Setup\EavSetupFactory $eavSetupFactory
